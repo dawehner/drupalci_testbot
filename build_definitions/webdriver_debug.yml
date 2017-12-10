@@ -16,14 +16,16 @@ build:
       dbcreate:
   assessment:
     validate_codebase:
-      phplint:
-      container_composer:
-      csslint:
-      eslint:
+      #phplint:
+      #container_composer:
+      #csslint:
+      #eslint:
       # phpcs:
     testing:
+      simpletest.custom:
+        class: \Drupal\FunctionalJavascriptTests\Tests\JSWebWithWebDriverAssertTest
 #      simpletest.standard:
 #        concurrency: 31
-      simpletest.js:
-        concurrency: 1
-        types: 'PHPUnit-FunctionalJavascript'
+#      simpletest.js:
+#        concurrency: 1
+#        types: 'PHPUnit-FunctionalJavascript'

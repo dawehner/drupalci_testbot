@@ -222,9 +222,9 @@ class Environment implements Injectable, EnvironmentInterface {
     $container['HostConfig']['Binds'][] = $this->build->getHostCoredumpDirectory() . ':' . $this->containerCoreDumpDir;
     $container['HostConfig']['Binds'][] = $this->build->getHostComposerCacheDirectory() . ':' . $this->containerComposerCacheDir;
     $container['HostConfig']['Ulimits'][] = ['Name' => 'core', 'Soft' => -1, 'Hard' => -1 ];
-//    #Link this to the chrome container
-//    $execname = substr($this->chromeContainer['name'], 1);
-//    $container['HostConfig']['Links'][0] = $execname;
+    #Link this to the chrome container
+    $execname = substr($this->chromeContainer['name'], 1);
+    $container['HostConfig']['Links'][0] = $execname;
     $this->executableContainer = $this->startContainer($container);
 
   }
